@@ -57,11 +57,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrePositionOrganizer.Data\PrePositionOrganizer.Data.csproj">
+      <Project>{26ef93a2-fac2-496f-b47d-40c3fc541e1d}</Project>
+      <Name>PrePositionOrganizer.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrePositionOrganizer.Models\PrePositionOrganizer.Models.csproj">
+      <Project>{1d288551-aec7-417c-a49e-37f6a338647d}</Project>
+      <Name>PrePositionOrganizer.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
