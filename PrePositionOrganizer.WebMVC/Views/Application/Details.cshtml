@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>ApplicationDetail</h4>
+    @*<h4>ApplicationDetail</h4>*@
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -66,9 +66,17 @@
             @Html.DisplayFor(model => model.ModifiedUtc)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.ApplicationId  }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicationId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

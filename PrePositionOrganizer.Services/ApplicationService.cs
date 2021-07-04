@@ -45,7 +45,7 @@ namespace PrePositionOrganizer.Services
                 var query =
                     ctx
                         .Applications
-                        .Where(e => e.OwnerId == _userId)
+                        //.Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new ApplicationListItem
@@ -59,6 +59,15 @@ namespace PrePositionOrganizer.Services
                 return query.ToArray();
             }
         }
+
+        public IEnumerable<Application> GetApplicationList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Applications.ToList();
+            }
+        }
+
 
         public ApplicationDetail GetApplicationById(int id)
         {
@@ -78,9 +87,38 @@ namespace PrePositionOrganizer.Services
                         JobLocation = entity.JobLocation,
                         MyInterest = entity.MyInterest,
                         Status = entity.Status,
+                        Comments = GetListOfCommentStrings(entity.Comments),
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
+            }
+        }
+
+        public List<string> GetListOfCommentStrings(List<Comment> comments)
+        {
+            List<string> commentText = new List<string>();
+
+            foreach(Comment c in comments)
+            {
+                commentText.Add(c.Text);
+            }
+            return commentText;
+        }
+        public bool UpdateApplication(ApplicationEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Applications
+                        .Single(e => e.ApplicationId == model.ApplicationId && e.OwnerId == _userId);
+
+                entity.Status = model.Status;
+                entity.MyInterest = model.MyInterest;
+                
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

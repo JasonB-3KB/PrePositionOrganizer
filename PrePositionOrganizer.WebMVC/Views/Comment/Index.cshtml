@@ -1,10 +1,10 @@
-﻿@model IEnumerable<PrePositionOrganizer.Models.ApplicationListItem>
+﻿@model IEnumerable<PrePositionOrganizer.Models.CommentListItem>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Applications</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,7 +12,7 @@
 @if (TempData.ContainsKey("SaveResult"))
 {
 <div class="alert alert-success fade in" role="alert">
-    @ViewBag.SaveResult
+    
     <button type="button" class="close" data-dismiss="alert">
         <span>&times;</span>
     </button>
@@ -22,10 +22,13 @@
 <table class="table">
     <tr>
         @*<th>
-            @Html.DisplayNameFor(model => model.ApplicationId)
+            @Html.DisplayNameFor(model => model.CommentId)
         </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.CompanyName)
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
@@ -36,18 +39,21 @@
 @foreach (var item in Model) {
     <tr>
         @*<td>
-            @Html.DisplayFor(modelItem => item.ApplicationId)
+            @Html.DisplayFor(modelItem => item.CommentId)
         </td>*@
         <td>
-            @Html.DisplayFor(modelItem => item.CompanyName)
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.ApplicationId  }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ApplicationId }) |
-            @*@Html.ActionLink("Delete", "Delete", new { id = item.ApplicationId })*@
+            @Html.ActionLink("Edit", "Edit", new { id = item.CommentId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CommentId }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id = item.CommentId })*@
         </td>
     </tr>
 }

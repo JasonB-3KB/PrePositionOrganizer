@@ -33,6 +33,7 @@ namespace PrePositionOrganizer.Data
         }
 
         public DbSet<Application> Applications { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

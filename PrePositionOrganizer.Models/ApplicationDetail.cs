@@ -20,17 +20,19 @@ namespace PrePositionOrganizer.Models
         public string JobDescription { get; set; }
 
         [Display(Name = "Estimated Salary")]
-        public double SalaryEstimate { get; set; }
+        public string SalaryEstimate { get; set; }
 
         [Display(Name = "Job Location")]
         public string JobLocation { get; set; }
 
         [Display(Name = "Application date")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [Display(Name = "Application process modified date")]
+        [Display(Name = "Application updated")]
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        
+        //Not sure if this will work>>
+        public List<string> Comments { get; set; }
+
         [Display(Name = "My Interest Level")]
         public MyInterest MyInterest { get; set; }
         

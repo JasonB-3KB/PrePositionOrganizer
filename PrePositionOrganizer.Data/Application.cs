@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +25,18 @@ namespace PrePositionOrganizer.Data
         public string JobDescription { get; set; }
         
         [Display(Name ="Estimated Salary")]
-        public double SalaryEstimate { get; set; }
+        public string SalaryEstimate { get; set; }
         
         [Display(Name ="Job Location")]
         public string JobLocation { get; set; }
+
+        //Maybe this will work>>
+        
+        //[Required]
+        //[ForeignKey(nameof(Comment))]
+        //public int CommentId { get; set; }
+        //public string Text { get; set; }
+        public virtual List<Comment> Comments { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

@@ -1,0 +1,50 @@
+﻿@model PrePositionOrganizer.Models.CommentDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details about a Comment</h2>
+
+<div>
+    @*<h4>CommentDetail</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.CommentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CommentId  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
