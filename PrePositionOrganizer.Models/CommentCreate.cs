@@ -21,7 +21,7 @@ namespace PrePositionOrganizer.Models
         public int ApplicationId { get; set; }
         public virtual Application Application { get; set; }
 
-        public DateTimeOffset CreatedUtc { get; set; }
+        
 
     }
 }

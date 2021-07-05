@@ -24,7 +24,7 @@ namespace PrePositionOrganizer.Services
                     OwnerId = _userId,
                     Text = model.Text,
                     ApplicationId = model.ApplicationId,
-                    CreatedUtc = model.CreatedUtc
+                    CreatedUtc = DateTimeOffset.Now
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -48,7 +48,7 @@ namespace PrePositionOrganizer.Services
                                 {
                                     CommentId = e.CommentId,
                                     Text = e.Text,
-                                    ApplicationId = e.ApplicationId,
+                                    ApplicationId = e.Application.CompanyName,
                                     CreatedUtc = e.CreatedUtc
                                 }
                                 );

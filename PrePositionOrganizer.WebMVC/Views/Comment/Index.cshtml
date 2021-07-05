@@ -3,9 +3,36 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+    .background {
+        background-size: cover;
+        background-image: url('../../Content/3KBRock.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: auto;
+        color: whitesmoke;
+        font-size: large;
+    }
 
+    a:visited {
+        color: cadetblue;
+    }
+
+    a:link {
+        color: cadetblue;
+    }
+
+    a:hover {
+        color: cyan;
+    }
+
+    .col-md-10 {
+        color: black;
+    }
+</style>
 <h2>Index</h2>
-
+<body class="background"></body>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -43,10 +70,9 @@
         </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Text)
-        </td>
+        </td>        
         <td>
-            @Html.DisplayFor(modelItem => item.ApplicationId)
-        </td>
+            @Html.DisplayFor(modelItem => item.ApplicationId, ViewData["ApplicationId"] )
         <td>
             @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>

@@ -3,10 +3,37 @@
 @{
     ViewBag.Title = "Create";
 }
+<style>
+    .background {
+        background-size: cover;
+        background-image: url('../../Content/3KBRock.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: auto;
+        color: whitesmoke;
+        font-size: large;
+    }
 
+    a:visited {
+        color: cadetblue;
+    }
+
+    a:link {
+        color: cadetblue;
+    }
+
+    a:hover {
+        color: cyan;
+    }
+
+    .col-md-10 {
+        color: black;
+    }
+</style>
 <h2>Create an Entry</h2>
 
-
+<body class="background"></body>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()

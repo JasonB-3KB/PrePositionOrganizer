@@ -3,11 +3,32 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+    .background {
+        background-size: cover;
+        background-image: url('../../Content/3KBRock.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin:auto;
+        color: whitesmoke;
+        font-size:large;
+    }
 
+    a:visited{
+        color:cadetblue;
+    }
+    a:link {
+        color: cadetblue;
+    }
+    a:hover {
+        color: cyan;
+    }
+</style>
 <h2>Applications</h2>
-
+<body class="background"></body>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add another application", "Create")
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -28,28 +49,34 @@
             @Html.DisplayNameFor(model => model.CompanyName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </th>
-        <th></th>
+
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        @*<td>
+<tr>
+    @*<td>
             @Html.DisplayFor(modelItem => item.ApplicationId)
         </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.ApplicationId  }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ApplicationId }) |
-            @*@Html.ActionLink("Delete", "Delete", new { id = item.ApplicationId })*@
-        </td>
-    </tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CompanyName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.JobDescription)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedUtc)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ApplicationId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ApplicationId }) |
+        @*@Html.ActionLink("Delete", "Delete", new { id = item.ApplicationId })*@
+    </td>
+</tr>
 }
 
 </table>

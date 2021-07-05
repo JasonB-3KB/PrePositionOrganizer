@@ -104,6 +104,8 @@ namespace PrePositionOrganizer.Services
             }
             return commentText;
         }
+
+
         public bool UpdateApplication(ApplicationEdit model)
         {
             using (var ctx = new ApplicationDbContext())

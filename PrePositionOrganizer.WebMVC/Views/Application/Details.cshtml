@@ -3,20 +3,44 @@
 @{
     ViewBag.Title = "Details";
 }
+<style>
+    .background {
+        background-size: cover;
+        background-image: url('../../Content/3KBRock.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: auto;
+        color: whitesmoke;
+        font-size: large;
+    }
 
-<h2>Details</h2>
+    a:visited {
+        color: cadetblue;
+    }
 
+    a:link {
+        color: cadetblue;
+    }
+
+    a:hover {
+        color: cyan;
+    }
+   
+</style>
+<h2>Application Details</h2>
+<body class="background"></body>
 <div>
     @*<h4>ApplicationDetail</h4>*@
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.ApplicationId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ApplicationId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.CompanyName)
@@ -70,9 +94,17 @@
             @Html.DisplayNameFor(model => model.Comments)
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Comments)
-        </dd>
+
+        @if (Model.Comments != null)
+        {
+            for (var i = 0; i < Model.Comments.Count(); i++)
+            {
+                <dd>
+                    @Html.DisplayFor(model => model.Comments)
+                </dd>
+            }
+        }
+
 
     </dl>
 </div>

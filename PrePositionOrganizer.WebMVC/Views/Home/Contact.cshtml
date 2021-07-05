@@ -1,17 +1,41 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
+<style>
+    .background {
+        background-size: cover;
+        background-image: url('../../Content/3KBRock.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: auto;
+        color: whitesmoke;
+        font-size: large;
+    }
+
+    a:visited {
+        color: cadetblue;
+    }
+
+    a:link {
+        color: cadetblue;
+    }
+
+    a:hover {
+        color: cyan;
+    }
+</style>
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
-
+<body class="background"></body>
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
+    3KB Productions<br />
+    Central Indiana<br />
+    @*<abbr title="Phone">P:</abbr>
+    425.555.0100*@
 </address>
 
 <address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    <strong>Support:</strong>   <a href="mailto:3kbproductions@gmail.com">3kbproductions@gmail.com</a><br />
+    
 </address>

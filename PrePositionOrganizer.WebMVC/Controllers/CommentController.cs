@@ -18,8 +18,15 @@ namespace PrePositionOrganizer.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CommentService(userId);
+            var aservice2 = new ApplicationService(userId);
             var model = service.GetComments();
+            //List<Application> applications = aservice2.GetApplicationList().ToList();
 
+            ViewData["ApplicationId"] = aservice2.GetApplications().Select(e => new SelectListItem
+            {
+                Text = e.CompanyName,
+                Value = e.ApplicationId.ToString()
+            });
             return View(model);
         }
 
