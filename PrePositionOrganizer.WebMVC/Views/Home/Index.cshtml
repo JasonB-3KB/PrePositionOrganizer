@@ -5,8 +5,9 @@
 #HomePageBody {
 
         display:flex;
-        background-image: url('/Content/FutureJobTracker3.png');
+        background-image: url('/Content/FutureJobTracker4.png');
         background-size: cover;
+        height:100vh;
         background-position: center;
         background-repeat: no-repeat;
         margin: auto;
@@ -18,11 +19,19 @@
 
 }
 .row{
-    padding-top: 200px;
-    padding-left: 400px;
+    /*padding-top: 300px;
+    padding-left: 400px;*/
+    margin: auto;
     color: white;
-    justify-items:center;
+    text-shadow: 1px 1px 2px black;
+    position: relative;
+    left: 300px;
+    top: 300px;
     font-weight: bold;
+    
+}
+.row a{
+    color: black;
 }
 </style>
 <body id="HomePageBody">
@@ -34,16 +43,16 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Get started</h2>
         <p>
-            Future Job Tracker is just simply that........a place to keep track of all your applications you've submitted for that future job you want.
+            Future Job Tracker is a place to keep track of all your applications you've submitted for that future job you want.
         </p>
-        <p><a class="btn btn-default" href="~/Views/Application/Index.cshtml">View Applications &raquo;</a></p>
+        <p><a class="btn btn-default" href="/Application/Index">View Applications &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Add Comments</h2>
         <p>Want to add a comment on the progress of your application? Click here.</p>
-        <p><a class="btn btn-default" href="~/Views/Comment/Index.cshtml">View Comments &raquo;</a></p>
+        <p><a class="btn btn-default" href="/Comment/Index">View Comments &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>More about us</h2>

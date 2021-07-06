@@ -3,13 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Seeking Job Tracker</title>
+    <title>@ViewBag.Title - Future Job Tracker</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <style>
         footer{
             color:white;
-        }
+            font-size: large;
+            position:relative;
+            top:350px;
+            
+        }        
+        
     </style>
 </head>
 <body>
@@ -40,9 +45,10 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        
         <footer>
-            <p>&copy; @DateTime.Now.Year - Future Job Tracker</p>
+            <hr/>
+            <p>&copy; @DateTime.Now.Year - Created by Jason Bagwill at 3KB Productions</p>
         </footer>
     </div>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrePositionOrganizer.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace PrePositionOrganizer.Models
         public string CompanyName { get; set; }
         [Display(Name ="Description of job")]
         public string JobDescription { get; set; }
+
+        [Display(Name = "Current Status of Application")]
+        public Status Status { get; set; }
 
         [Display(Name ="Application Date")]
         public DateTimeOffset CreatedUtc { get; set; }

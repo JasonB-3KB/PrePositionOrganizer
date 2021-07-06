@@ -53,6 +53,7 @@ namespace PrePositionOrganizer.Services
                                     ApplicationId = e.ApplicationId,
                                     CompanyName = e.CompanyName,
                                     JobDescription = e.JobDescription,
+                                    Status = e.Status,
                                     CreatedUtc = e.CreatedUtc
                                 }
                                 );

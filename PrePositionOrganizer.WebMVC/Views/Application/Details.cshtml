@@ -75,6 +75,21 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.MyInterest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MyInterest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobLocation)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </dt>
 
@@ -100,7 +115,7 @@
             for (var i = 0; i < Model.Comments.Count(); i++)
             {
                 <dd>
-                    @Html.DisplayFor(model => model.Comments)
+                    @Html.DisplayFor(model => model.Comments[i])
                 </dd>
             }
         }

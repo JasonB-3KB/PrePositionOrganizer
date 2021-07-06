@@ -36,7 +36,7 @@ namespace PrePositionOrganizer.Models
         [Display(Name = "My Interest Level")]
         public MyInterest MyInterest { get; set; }
         
-        [Display(Name = "Current Status of Application")]
+        [Display(Name = "Current Status")]
         public Status Status { get; set; }
     }
 }
