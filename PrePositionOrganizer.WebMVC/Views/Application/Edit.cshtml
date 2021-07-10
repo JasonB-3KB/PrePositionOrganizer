@@ -5,26 +5,36 @@
 }
 <style>
     .background {
-        background-size: cover;
+        /*display: flex;*/
         background-image: url('../../Content/3KBRock.png');
-        background-position: center;
-        background-repeat: no-repeat;
+        background-size: cover;
         height: 100vh;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         margin: auto;
         color: whitesmoke;
-        font-size: large;
+        /*font-size: large;*/
     }
 
     a:visited {
-        color: cadetblue;
+        color: whitesmoke;
     }
 
     a:link {
-        color: cadetblue;
+        color: whitesmoke;
     }
 
     a:hover {
-        color: cyan;
+        color: #00ccff;
+    }
+
+    dt {
+        font-size: large;
+    }
+
+    dd {
+        color: #00ccff;
     }
     .col-md-10 {
         color: black;
@@ -51,6 +61,38 @@
     </div>*@
 
     <div class="form-group">
+        @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.JobDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.JobDescription, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.JobDescription, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SalaryEstimate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SalaryEstimate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SalaryEstimate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.JobLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.JobLocation, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.JobLocation, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
         @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EnumDropDownListFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
@@ -61,7 +103,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.MyInterest, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EnumDropDownListFor(model => model.MyInterest,  new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EnumDropDownListFor(model => model.MyInterest, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.MyInterest, "", new { @class = "text-danger" })
         </div>
     </div>

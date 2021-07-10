@@ -91,5 +91,20 @@ namespace PrePositionOrganizer.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteComment(int commentId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Comments
+                    .Single(e => e.CommentId == commentId && e.OwnerId == _userId);
+
+                ctx.Comments.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

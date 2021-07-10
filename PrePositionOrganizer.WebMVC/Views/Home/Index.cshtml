@@ -5,40 +5,86 @@
 #HomePageBody {
 
         display:flex;
-        background-image: url('/Content/FutureJobTracker4.png');
-        background-size: cover;
+        background: #0e1538;
+        background-size: cover;        
         height:100vh;
         background-position: center;
         background-repeat: no-repeat;
         margin: auto;
     }
 .jumbotron{
-    padding-left: 600px;
-    padding-top: 200px;
-    background: transparent;
-
+    /*padding-left: 600px;
+    padding-top: 200px;*/
+    margin-top:75px;
+    position:relative;
+    background:#fff;    
+    
 }
+    .jumbotron::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        transform: skewX(2deg) skewY(1deg);
+        background: linear-gradient(315deg, #00ccff, #0e1538, #d400d4)
+    }
+    .jumbotron::after {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        transform: skewX(2deg) skewY(1deg);
+        background: linear-gradient(315deg, #00ccff, #0e1538, #d400d4);
+        filter: blur(50px);
+    }
+    .jumbotron span{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#0e1538;
+        z-index: 10;
+    }
+    .jumbotron h1{
+        position: relative;
+        z-index:11;
+        color: white;
+    }
+    .jumbotron p{
+        position: relative;
+        z-index: 11;
+        color:white;
+    }
+    .jumbotron a{
+        color:black;
+    }
 .row{
     /*padding-top: 300px;
-    padding-left: 400px;*/
-    margin: auto;
-    color: white;
-    text-shadow: 1px 1px 2px black;
-    position: relative;
-    left: 300px;
+    padding-left: 400px; */   
+    color: white;  
+    
+    /*position: relative;*/
+    /*left: 300px;
     top: 300px;
-    font-weight: bold;
+    font-weight: bold;*/
     
 }
 .row a{
     color: black;
 }
+    
 </style>
-<body id="HomePageBody">
+<body id="HomePageBody"></body>
 <div class="jumbotron">
-    @*<h1>ASP.NET</h1>*@
-    @*<p class="lead">Future Job Tracker is a great tool to keep track of all your applications when searching for your next job.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+    <span></span>
+    <h1>Future Job Tracker</h1>
+    <p class="lead">Future Job Tracker is a great tool to keep track of all your applications when searching for your next job.</p>
+    <p><a href="/Application/Index" class="btn btn-info btn-lg">Get Started &raquo;</a></p>
 </div>
 
 <div class="row">
@@ -47,17 +93,16 @@
         <p>
             Future Job Tracker is a place to keep track of all your applications you've submitted for that future job you want.
         </p>
-        <p><a class="btn btn-default" href="/Application/Index">View Applications &raquo;</a></p>
+        <p><a class="btn btn-info" href="/Application/Index">View Applications &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Add Comments</h2>
         <p>Want to add a comment on the progress of your application? Click here.</p>
-        <p><a class="btn btn-default" href="/Comment/Index">View Comments &raquo;</a></p>
+        <p><a class="btn btn-info" href="/Comment/Index">View Comments &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>More about us</h2>
         <p>Learn more about 3KB Productions.</p>
-        <p><a class="btn btn-default" href="http://3kbproductions.com">Learn more &raquo;</a></p>
+        <p><a class="btn btn-info" href="http://3kbproductions.com">Learn more &raquo;</a></p>
     </div>
 </div>
-</body>

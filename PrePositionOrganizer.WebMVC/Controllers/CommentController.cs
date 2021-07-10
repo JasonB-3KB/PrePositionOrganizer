@@ -122,6 +122,30 @@ namespace PrePositionOrganizer.WebMVC.Controllers
             ModelState.AddModelError("", "Your comment was not updated.");
             return View(model);
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCommentService();
+            var model = svc.GetCommentById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateCommentService();
+
+            service.DeleteComment(id);
+
+            TempData["SaveResult"] = "Your comment was deleted.";
+
+            return RedirectToAction("Index");
+        }
+
         private CommentService CreateCommentService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

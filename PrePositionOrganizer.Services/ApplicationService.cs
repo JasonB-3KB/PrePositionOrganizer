@@ -116,10 +116,28 @@ namespace PrePositionOrganizer.Services
                         .Applications
                         .Single(e => e.ApplicationId == model.ApplicationId && e.OwnerId == _userId);
 
+                entity.CompanyName = model.CompanyName;
+                entity.JobDescription = model.JobDescription;
+                entity.SalaryEstimate = model.SalaryEstimate;
+                entity.JobLocation = model.JobLocation;
                 entity.Status = model.Status;
-                entity.MyInterest = model.MyInterest;
-                
+                entity.MyInterest = model.MyInterest;                
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteApplication(int applicationId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Applications
+                    .Single(e => e.ApplicationId == applicationId && e.OwnerId == _userId);
+
+                ctx.Applications.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

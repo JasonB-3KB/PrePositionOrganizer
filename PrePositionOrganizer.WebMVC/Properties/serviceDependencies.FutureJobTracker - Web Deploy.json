@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "mssql1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/prepositionorganizerwebmvcdbserver/databases/PrePositionOrganizer.WebMVC_db",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/prepositionorganizerwebmvc/databases/PrePositionOrganizer.WebMVC_db",
       "type": "mssql.azure",
-      "connectionId": "ConnectionStrings:DefaultConnection",
+      "connectionId": "DefaultConnection",
       "secretStore": "AzureAppSettings"
     }
   }

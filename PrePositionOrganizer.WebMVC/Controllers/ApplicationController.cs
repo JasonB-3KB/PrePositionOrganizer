@@ -63,6 +63,10 @@ namespace PrePositionOrganizer.WebMVC.Controllers
                 new ApplicationEdit
                 {
                     ApplicationId = detail.ApplicationId,
+                    CompanyName = detail.CompanyName,
+                    JobDescription = detail.JobDescription,
+                    SalaryEstimate = detail.SalaryEstimate,
+                    JobLocation = detail.JobLocation,
                     Status = detail.Status,
                     MyInterest = detail.MyInterest
                 };
@@ -91,6 +95,30 @@ namespace PrePositionOrganizer.WebMVC.Controllers
             ModelState.AddModelError("", "Your Application was not updated.");
             return View(model);
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateApplicationService();
+            var model = svc.GetApplicationById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateApplicationService();
+
+            service.DeleteApplication(id);
+
+            TempData["SaveResult"] = "Your Entry was deleted.";
+
+            return RedirectToAction("Index");
+        }
+
         private ApplicationService CreateApplicationService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

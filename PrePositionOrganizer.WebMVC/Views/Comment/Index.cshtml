@@ -5,26 +5,36 @@
 }
 <style>
     .background {
-        background-size: cover;
+        /*display: flex;*/
         background-image: url('../../Content/3KBRock.png');
-        background-position: center;
-        background-repeat: no-repeat;
+        background-size: cover;
         height: 100vh;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         margin: auto;
         color: whitesmoke;
-        font-size: large;
+        /*font-size: large;*/
     }
 
     a:visited {
-        color: cadetblue;
+        color: whitesmoke;
     }
 
     a:link {
-        color: cadetblue;
+        color: whitesmoke;
     }
 
     a:hover {
-        color: cyan;
+        color: #00ccff;
+    }
+
+    th {
+        font-size: large;
+    }
+
+    td {
+        color: #00ccff;
     }
 
     .col-md-10 {
@@ -79,7 +89,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.CommentId }) |
             @Html.ActionLink("Details", "Details", new { id = item.CommentId }) |
-            @*@Html.ActionLink("Delete", "Delete", new { id = item.CommentId })*@
+            @Html.ActionLink("Delete", "Delete", new { id = item.CommentId })
         </td>
     </tr>
 }
